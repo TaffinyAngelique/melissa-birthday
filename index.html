@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Melissa</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet"><style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+background:#050505;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Cormorant Garamond',serif;
+color:white;
+overflow:hidden;
+}
+
+/* OPENING SCREEN */
+
+#opening{
+position:fixed;
+inset:0;
+background:#050505;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+animation:fadeOut 2s 4s forwards;
+}
+
+.opening-content{text-align:center;}
+
+.opening-small{
+letter-spacing:.5em;
+font-size:14px;
+color:#c8a96e;
+margin-bottom:20px;
+opacity:0;
+animation:fadeUp 1.5s forwards;
+}
+
+.opening-name{
+font-family:'Cinzel Decorative';
+font-size:50px;
+background:linear-gradient(90deg,#c8a96e,#f0d898,#c8a96e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+opacity:0;
+animation:fadeUp 2s .8s forwards, shimmer 4s infinite;
+background-size:200%;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes shimmer{
+0%{background-position:0%}
+50%{background-position:100%}
+100%{background-position:0%}
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* GOLD SPARKLES */
+
+.sparkle{
+position:absolute;
+width:4px;
+height:4px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 6px gold,0 0 12px #f0d898;
+animation:sparkleFloat linear infinite;
+}
+
+@keyframes sparkleFloat{
+0%{transform:translateY(110vh);opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* CARD */
+
+.card{
+position:relative;
+text-align:center;
+padding:60px 40px;
+z-index:2;
+}
+
+/* PHOTO FRAME */
+
+.photo-frame{
+position:relative;
+width:200px;
+height:200px;
+margin:0 auto 30px;
+}
+
+.photo-frame::before{
+content:'';
+position:absolute;
+inset:-4px;
+border-radius:50%;
+background:conic-gradient(#c8a96e,#f0d898,#c8a96e,#a07840);
+animation:spinGold 5s linear infinite;
+}
+
+@keyframes spinGold{
+to{transform:rotate(360deg);}
+}
+
+.photo-frame img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #050505;
+}
+
+.halo{
+position:absolute;
+inset:-25px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(200,169,110,0.3), transparent 70%);
+animation:haloGlow 3s infinite;
+}
+
+@keyframes haloGlow{
+0%,100%{opacity:.5;}
+50%{opacity:1;}
+}
+
+.crown{
+position:absolute;
+top:-20px;
+left:50%;
+transform:translateX(-50%);
+font-size:30px;
+}
+
+/* TEXT */
+
+.subtitle{
+letter-spacing:.4em;
+color:#c8a96e;
+text-transform:uppercase;
+font-size:13px;
+margin-bottom:10px;
+}
+
+.title{
+font-family:'Cinzel Decorative';
+font-size:38px;
+}
+
+.name{
+font-family:'Cinzel Decorative';
+font-size:32px;
+background:linear-gradient(90deg,#c8a96e,#f0d898,#c8a96e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.divider{
+width:60px;
+height:1px;
+background:linear-gradient(90deg,transparent,#c8a96e,transparent);
+margin:20px auto;
+}
+
+.message{
+font-style:italic;
+opacity:.8;
+margin-bottom:25px;
+}
+
+/* CANDLE */
+
+.candle-wrap{margin:20px 0;}
+
+.candle{
+width:14px;
+height:50px;
+background:white;
+border-radius:4px;
+margin:auto;
+position:relative;
+cursor:pointer;
+}
+
+.flame{
+width:14px;
+height:20px;
+background:radial-gradient(circle,#ffd65b,#ff9c00);
+border-radius:50%;
+position:absolute;
+top:-20px;
+animation:flicker .15s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+.blow-text{
+font-size:13px;
+opacity:.7;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+padding:14px 36px;
+background:linear-gradient(135deg,#c8a96e,#f0d898,#a07840);
+color:black;
+text-decoration:none;
+border-radius:3px;
+letter-spacing:.2em;
+margin-top:10px;
+cursor:pointer;
+}
+
+</style></head><body><div id="opening">
+<div class="opening-content">
+<p class="opening-small">For Someone Special</p>
+<h1 class="opening-name">Melissa</h1>
+</div>
+</div><div id="sparkles"></div><div class="card"><div class="photo-frame">
+<div class="halo"></div>
+<div class="crown">👑</div>
+<img src="melissa.jpg">
+</div><p class="subtitle">Wishing you a wonderful</p>
+<h1 class="title">Happy Birthday</h1>
+<h2 class="name">Melissa</h2><div class="divider"></div><p class="message">
+May this day be filled with love, joy and golden moments ✨
+</p><div class="candle-wrap">
+<div class="candle">
+<div class="flame" id="flame"></div>
+</div>
+<p class="blow-text">Tap the candle to make a wish</p>
+</div><button class="btn" onclick="playSong()">Play Birthday Song</button>
+
+</div><audio id="song">
+<source src="happybirthday.mp3" type="audio/mpeg">
+</audio><script>
+
+/* SPARKLES */
+
+const container=document.getElementById("sparkles")
+
+for(let i=0;i<40;i++){
+let s=document.createElement("div")
+s.className="sparkle"
+s.style.left=Math.random()*100+"%"
+s.style.animationDuration=(Math.random()*10+8)+"s"
+container.appendChild(s)
+}
+
+/* CANDLE */
+
+document.querySelector(".candle").onclick=function(){
+document.getElementById("flame").style.display="none"
+}
+
+/* MUSIC */
+
+function playSong(){
+document.getElementById("song").play()
+}
+
+</script></body>
+</html>
